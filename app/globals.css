@@ -1,0 +1,156 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  --background: #fbfbfc;
+  --foreground: #09090b;
+  --surface: #ffffff;
+  --surface-soft: #f8f8f9;
+  --border: #ececed;
+  --muted: #f1f1f2;
+  --subtle: #71717a;
+  --primary: #18181b;
+  --primary-foreground: #fafafa;
+  --accent: #18181b;
+  --accent-foreground: #fafafa;
+  --ring: #18181b;
+  --radius: 0.75rem;
+}
+
+.dark {
+  --background: #09090b;
+  --foreground: #fafafa;
+  --surface: #09090b;
+  --surface-soft: #121214;
+  --border: #1c1c1f;
+  --muted: #18181b;
+  --subtle: #a1a1aa;
+  --primary: #fafafa;
+  --primary-foreground: #09090b;
+  --accent: #fafafa;
+  --accent-foreground: #09090b;
+  --ring: #d4d4d8;
+}
+
+* {
+  box-sizing: border-box;
+  box-shadow: none !important;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  min-height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-cairo), ui-sans-serif, system-ui, sans-serif;
+  line-height: 1.1;
+  transition:
+    background-color 220ms ease,
+    color 220ms ease,
+    border-color 220ms ease;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 900;
+  line-height: 1.1;
+}
+
+.tracking-tighter {
+  letter-spacing: -0.02em;
+  /* Keep actual tighter for balance if needed */
+}
+
+.tracking-widest {
+  letter-spacing: 0.15em;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+@keyframes in {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes shake {
+
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+
+  25% {
+    transform: translateX(-4px);
+  }
+
+  75% {
+    transform: translateX(4px);
+  }
+}
+
+@keyframes pulse-slow {
+
+  0%,
+  100% {
+    opacity: 0.1;
+  }
+
+  50% {
+    opacity: 0.3;
+  }
+}
+
+.animate-in {
+  animation: in 0.5s ease-out forwards;
+}
+
+.animate-shake-1 {
+  animation: shake 0.3s ease-in-out infinite;
+}
+
+.animate-pulse-slow {
+  animation: pulse-slow 3s ease-in-out infinite;
+}
+
+::selection {
+  background: var(--primary);
+  color: var(--primary-foreground);
+}
+@keyframes aurora {
+  from {
+    background-position: 50% 50%, 50% 50%;
+  }
+  to {
+    background-position: 350% 50%, 350% 50%;
+  }
+}
+
+.animate-aurora {
+  animation: aurora 60s linear infinite;
+}

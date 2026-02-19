@@ -1,0 +1,31 @@
+{
+  "name": "anan-developers",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "bash -lc 'export TMPDIR=${TMPDIR:-/tmp}; export XDG_CACHE_HOME=${XDG_CACHE_HOME:-$TMPDIR}; export BUN_INSTALL_CACHE_DIR=${BUN_INSTALL_CACHE_DIR:-$TMPDIR/bun}; if [ ! -d node_modules ]; then bun install; fi; bunx --bun next dev --port 3003'",
+    "build": "bash -lc 'export TMPDIR=${TMPDIR:-/tmp}; export XDG_CACHE_HOME=${XDG_CACHE_HOME:-$TMPDIR}; export BUN_INSTALL_CACHE_DIR=${BUN_INSTALL_CACHE_DIR:-$TMPDIR/bun}; if [ ! -d node_modules ]; then bun install; fi; bunx --bun next build'",
+    "start": "bash -lc 'export TMPDIR=${TMPDIR:-/tmp}; bunx --bun next start --port 3003'",
+    "lint": "bash -lc 'export TMPDIR=${TMPDIR:-/tmp}; export XDG_CACHE_HOME=${XDG_CACHE_HOME:-$TMPDIR}; export BUN_INSTALL_CACHE_DIR=${BUN_INSTALL_CACHE_DIR:-$TMPDIR/bun}; if [ ! -d node_modules ]; then bun install; fi; bunx --bun eslint'"
+  },
+  "dependencies": {
+    "@convex-dev/agent": "^0.3.2",
+    "@convex-dev/better-auth": "latest",
+    "better-auth": "^1.4.9",
+    "class-variance-authority": "^0.7.1",
+    "convex": "^1.31.6",
+    "next": "16.1.1",
+    "react": "19.2.3",
+    "react-dom": "19.2.3"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "^9",
+    "eslint-config-next": "16.1.1",
+    "tailwindcss": "^4",
+    "typescript": "^5"
+  }
+}
